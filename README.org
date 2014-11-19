@@ -18,17 +18,13 @@
   1. Clone the repository
   2. ~virtualenv ppm-venv~
   3. ~ppm-venv/bin/pip install -r requirements.txt~
+  4. Link ~bin/ppm~ to somewhere in your path.
 
-  Then link ~src/main.py~ somewhere to somewhere in your ~$PATH~. I have it as
-  =~/.root/bin/ppm -> ~/Code/ppm/src/main.py=. If you do not have the correct
-  versions of ~pip~ and ~ipython~ in your global ~$PYTHONPATH~, then use this
-  script instead:
+     If you are installing from git, installing in ~/usr/bin~ is strongly
+     discouraged. Note that /copying ~bin/ppm~ will not work!/ This script is
+     intended to operate within the virtualenv set up previously.
 
-  #+begin_src sh
-    #!/bin/sh
-    cd /path/to/ppm/copy;
-    ppm-venv/bin/ipython3 src/main.py;
-  #+end_src
+  5. ~ppm~ is now installed!
 
 * Commands
 

@@ -21,7 +21,7 @@
   4. Link ~bin/ppm~ to somewhere in your path.
 
      If you are installing from git, installing in ~/usr/bin~ is strongly
-     discouraged. Note that /copying ~bin/ppm~ will not work!/ This script is
+     discouraged. Note that /copying/ ~bin/ppm~ /will not work!/ This script is
      intended to operate within the virtualenv set up previously.
 
   5. ~ppm~ is now installed!

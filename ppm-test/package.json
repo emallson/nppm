@@ -1,0 +1,9 @@
+{
+    "name": "ppm-test",
+    "description": "I want npm for python. pip and virtualenv are monumentally frustrating.",
+    "main": "src/test.py",
+    "python": ">=3",
+    "dependencies": {
+        "semver": ">=0.0"
+    }
+}

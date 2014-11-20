@@ -4,10 +4,11 @@
   project in a folder, I should be able to ~cd $FOLDER && ppm install && ppm
   run~ and it should /just work/.
 
-  The way that npm works is nice in its simplicity: a package declaration file
-  (~package.json~) and a module directory (~node_modules~). It doesn't care
-  about multiple copies of the same package (each in a different ~node_modules~
-  folder), because not caring makes dependency management much easier.
+  The way that node with npm works is nice in its simplicity: a package
+  declaration file (~package.json~) and a module directory (~node_modules~). It
+  doesn't care about multiple copies of the same package (each in a different
+  ~node_modules~ folder), because not caring makes dependency management much
+  easier.
 
   I have modeled ppm after npm. The current implementation is built on top of
   ~pip~, because that is the only effective way of having it work /right

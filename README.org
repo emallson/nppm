@@ -45,9 +45,6 @@
 
   - ~ppm init~
     Analogous to ~npm init~. Generates a ~package.json~
-  - ~ppm install~ w/o existing ~package.json~
-    In this case, install should run in the current directory and if ~--save~
-    is specified, ~package.json~ should be created.
   - Way to specify 'binaries'
     Need to look at how npm does this.
   - ~ppm install -g~

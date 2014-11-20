@@ -2,6 +2,17 @@
     "name": "ppm",
     "version": "v0.0.1",
     "main": "src/main.py",
+    "engines": {
+        "python": ">=3.0.0"
+    },
+    "bin": {
+        "ppm": "./src/main.py"
+    },
+    "author": {
+        "name": "J David Smith",
+        "email": "emallson@atlanis.net",
+        "url": "https://atlanis.net/"
+    },
     "dependencies": {
         "pip": ">=1.5.0",
         "ipython": ">=2.3.0"

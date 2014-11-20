@@ -20,17 +20,20 @@ def find_package_root():
         files = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
 
     if path == '/':
-        raise FileNotFoundError('Unable to locate package.json')
+        path = os.getcwd()
     return path
 
 def load_package(root):
-    with open(os.path.join(root, 'package.json')) as pkgfile:
-        return json.load(pkgfile)
+    try:
+        with open(os.path.join(root, 'package.json')) as pkgfile:
+            return json.load(pkgfile)
+    except FileNotFoundError:
+        return None
 
 def install(package_root, packages):
-    # monkey patching shutils.move b/c it throws an error which the install
+    # monkey patching shutil.move b/c it throws an error which the install
     # command should catch and ignore -- which it doesn't, it catches and
-    # prints the traceback
+    # prints the trace
     orig_move = shutil.move
     def stupid_move(*args):
         try:
@@ -65,7 +68,7 @@ def run_install(ns, package_root, package):
         return re.match('[\w-]+(.*)', package).group(1)
 
     if(ns.save):
-        package['dependencies'] = merge(package['dependencies'], {name(package): version(package) for package in packages})
+        package['dependencies'] = merge(package.get('dependencies', {}), {name(package): version(package) for package in packages})
         with open(os.path.join(package_root, 'package.json'), 'w') as f:
             json.dump(package, f, indent=2, sort_keys=True)
 
@@ -107,16 +110,10 @@ def main():
 
     args = parser.parse_args()
     try:
-        try:
-            package_root = find_package_root()
-            package = load_package(package_root)
+        package_root = find_package_root()
+        package = load_package(package_root) or {}
 
-            args.func(args, package_root, package)
-        except FileNotFoundError:
-            if args.func == run_python: # total hack
-                run_python(args, None, {})
-            else:
-                pass            # behavior tbd
+        args.func(args, package_root, package)
     except(AttributeError):
         parser.print_help()
 

@@ -87,10 +87,10 @@ def main():
     parser = argparse.ArgumentParser(description="NPM for Python")
     command_parsers = parser.add_subparsers(description="")
 
-    # run [args]
-    run_parser = command_parsers.add_parser('run', help='Run application')
-    run_parser.add_argument("args", nargs=argparse.REMAINDER)
-    run_parser.set_defaults(func=run_main)
+    # start [args]
+    start_parser = command_parsers.add_parser('start', help='Start application', aliases=['run'])
+    start_parser.add_argument("args", nargs=argparse.REMAINDER)
+    start_parser.set_defaults(func=run_main)
 
     # install
     install_parser = command_parsers.add_parser('install', help='Install dependencies')

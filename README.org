@@ -33,7 +33,7 @@
     packages installed to ~package.json~. If no packages are given, install the
     packages listed in ~package.json~. Packages are installed in the project's
     ~python_modules~ folder.
-  - ~ppm run [args]~
+  - ~ppm start [args]~, ~ppm run [args]~
     Run the python script specified as ~main~ in the ~package.json~, supplying
     it ~args~ as arguments.
   - ~ppm python [args]~, ~ppm repl [args]~
@@ -48,8 +48,6 @@
   - ~ppm install~ w/o existing ~package.json~
     In this case, install should run in the current directory and if ~--save~
     is specified, ~package.json~ should be created.
-  - ~ppm start~ or ~ppm run~
-    Or both?
   - Way to specify 'binaries'
     Need to look at how npm does this.
   - ~ppm install -g~

@@ -30,19 +30,23 @@
 * Commands
 
   - ~ppm init~
+
     Initializes a basic ~package.json~ in the current directory.
 
   - ~ppm install [--save] [<package(s)>]~
+
     Installs one or more packages. If ~--save~ is specified, save the list of
     packages installed to ~package.json~. If no packages are given, install the
     packages listed in ~package.json~. Packages are installed in the project's
     ~python_modules~ folder.
 
   - ~ppm start [args]~, ~ppm run [args]~
+
     Run the python script specified as ~main~ in the ~package.json~, supplying
     it ~args~ as arguments.
 
   - ~ppm python [args]~, ~ppm repl [args]~
+
     Start an instance of IPython in the current directory which has the
     project's ~python_modules~ folder in ~sys.path~. Arguments are passed
     verbatim to IPython.

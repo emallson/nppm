@@ -16,16 +16,14 @@
 
 * Installation
 
-  1. Clone the repository
-  2. ~virtualenv ppm-venv~
-  3. ~ppm-venv/bin/pip install -r requirements.txt~
-  4. Link ~bin/ppm~ to somewhere in your path.
+  Working on PyPI submission. Naming is a problem (~ppm~ exists and is /not/
+  this project).
 
-     If you are installing from git, installing in ~/usr/bin~ is strongly
-     discouraged. Note that /copying/ ~bin/ppm~ /will not work!/ This script is
-     intended to operate within the virtualenv set up previously.
-
-  5. ~ppm~ is now installed!
+** From Source
+   1. Clone the repository
+   2. Run ~python setup.py --user install~ and make sure that =~/.local/bin= is on
+      your path.
+   3. ~ppm~ is now installed!
 
 * Commands
 

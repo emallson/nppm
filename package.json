@@ -13,6 +13,9 @@
         "email": "emallson@atlanis.net",
         "url": "https://atlanis.net/"
     },
+    "directories": {
+        "lib": "src/"
+    },
     "dependencies": {
         "pip": ">=1.5.0",
         "ipython": ">=2.3.0"

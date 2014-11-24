@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-import json
 import argparse
 import os
+from collections import OrderedDict
 
+from ppm.util import pkg_load
 from ppm.commands.install import run_install
 from ppm.commands.python import run_python, run_main
+from ppm.commands.init import run_init
 
 
 def find_package_root():
@@ -24,7 +26,7 @@ def find_package_root():
 def load_package(root):
     try:
         with open(os.path.join(root, 'package.json')) as pkgfile:
-            return json.load(pkgfile)
+            return pkg_load(pkgfile)
     except FileNotFoundError:
         return None
 
@@ -56,10 +58,17 @@ def main():
     python_parser.add_argument("args", nargs=argparse.REMAINDER)
     python_parser.set_defaults(func=run_python)
 
+    # init
+    init_parser = command_parsers.add_parser(
+        'init',
+        help='Initialize a PPM project',
+    )
+    init_parser.set_defaults(func=run_init)
+
     args = parser.parse_args()
     try:
         package_root = find_package_root()
-        package = load_package(package_root) or {}
+        package = load_package(package_root) or OrderedDict()
 
         args.func(args, package_root, package)
     except(AttributeError):

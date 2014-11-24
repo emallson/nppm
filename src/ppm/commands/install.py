@@ -53,6 +53,5 @@ def run_install(ns, package_root, package):
         package['dependencies'] = merge(package.get('dependencies', {}),
                                         {name(package): version(package)
                                          for package in packages})
-
         with open(os.path.join(package_root, 'package.json'), 'w') as f:
-            json.dump(package, f, indent=2, sort_keys=True)
+            json.dump(package, f, indent=2)

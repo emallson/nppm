@@ -7,5 +7,4 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-cd $DIR/../src;
-../ppm-venv/bin/ipython3 ./ppm/main.py -- $@;
+PYTHONPATH="$DIR/../src/:$PYTHONPATH" $DIR/../ppm-venv/bin/ipython3 $DIR/../src/ppm/main.py -- $@;

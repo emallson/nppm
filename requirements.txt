@@ -1,2 +1,3 @@
 pip>=1.5.0
 ipython>=2.3.0
+semver

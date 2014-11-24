@@ -1,7 +1,7 @@
 {
     "name": "ppm",
     "version": "v0.0.1",
-    "main": "src/main.py",
+    "main": "ppm/main.py",
     "engines": {
         "python": ">=3.0.0"
     },

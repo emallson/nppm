@@ -11,10 +11,10 @@ setup(
     author_email='emallson@atlanis.net',
     license='GPL',
     classifiers=[
-        'Developement Status :: 3 - Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
-        'License :: OSI Approved :: GPL License',
+        "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         'Programming Language :: Python :: 3'
     ],
     keywords='development',

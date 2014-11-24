@@ -8,7 +8,7 @@ def make_pythonpath(package_root, package):
     base = [os.path.join(package_root, "python_modules/")]
     if 'directories' in package and 'lib' in package['directories']:
         base += [os.path.join(package_root, package['directories']['lib'])]
-    return base.join(':')
+    return ':'.join(base)
 
 
 def python(args, package_root, package):

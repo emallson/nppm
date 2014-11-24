@@ -32,7 +32,8 @@ def load_package(root):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="NPM for Python")
+    parser = argparse.ArgumentParser(prog='ppm', description="npm-style package management interface for Python projects.")
+    parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
     command_parsers = parser.add_subparsers(description="")
 
     # start [args]
@@ -66,13 +67,13 @@ def main():
     init_parser.set_defaults(func=run_init)
 
     args = parser.parse_args()
-    try:
-        package_root = find_package_root()
-        package = load_package(package_root) or OrderedDict()
+    package_root = find_package_root()
+    package = load_package(package_root) or OrderedDict()
 
+    if hasattr(args, 'func'):
         args.func(args, package_root, package)
-    except(AttributeError):
-        parser.print_help()
+    else:
+        parser.print_usage()
 
 if __name__ == "__main__":
     main()

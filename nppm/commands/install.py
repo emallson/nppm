@@ -4,7 +4,7 @@ import shutil
 import os
 import json
 
-from ppm.util import merge
+from nppm.util import merge
 
 
 def install(package_root, packages):

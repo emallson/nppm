@@ -3,10 +3,10 @@ import argparse
 import os
 from collections import OrderedDict
 
-from ppm.util import pkg_load
-from ppm.commands.install import run_install
-from ppm.commands.python import run_python, run_main
-from ppm.commands.init import run_init
+from nppm.util import pkg_load
+from nppm.commands.install import run_install
+from nppm.commands.python import run_python, run_main
+from nppm.commands.init import run_init
 
 
 def find_package_root():

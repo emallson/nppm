@@ -16,8 +16,9 @@
 
 * Installation
 
-  Working on PyPI submission. Naming is a problem (~ppm~ exists and is /not/
-  this project).
+** From PyPI
+
+   ~pip install --user nppm~ (or ~sudo pip install nppm~ if you prefer global installs)
 
 ** From Source
    1. Clone the repository

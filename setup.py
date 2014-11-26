@@ -3,10 +3,10 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='ppm',
+    name='nppm',
     version='0.1.0',
-    description='An NPM-like tool for Python',
-    url='https://github.com/emallson/ppm',
+    description='An npm-like tool for Python projects',
+    url='https://github.com/emallson/nppm',
     author='J David Smith',
     author_email='emallson@atlanis.net',
     license='GPL',
@@ -22,6 +22,7 @@ setup(
     install_requires=['pip', 'ipython', 'semver'],
     entry_points={
         'console_scripts': [
+            'nppm=ppm.main:main',
             'ppm=ppm.main:main'
         ],
     },

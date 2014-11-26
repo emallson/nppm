@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from ppm.util import merge
+from nppm.util import merge
 
 
 def make_pythonpath(package_root, package):

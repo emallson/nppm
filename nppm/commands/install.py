@@ -22,7 +22,7 @@ def install(package_root, packages):
 
     shutil.move = stupid_move
 
-    retval = pip.commands['install']().main(
+    retval = pip.commands.install.InstallCommand().main(
         ['--target', os.path.join(package_root, "python_modules/")] +
         packages)
 

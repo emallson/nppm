@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nppm',
-    version='0.1.0',
+    version='0.1.1',
     description='An npm-like tool for Python projects',
     url='https://github.com/emallson/nppm',
     author='J David Smith',
@@ -22,8 +22,8 @@ setup(
     install_requires=['pip', 'ipython', 'semver'],
     entry_points={
         'console_scripts': [
-            'nppm=ppm.main:main',
-            'ppm=ppm.main:main'
+            'nppm=nppm.main:main',
+            'ppm=nppm.main:main'
         ],
     },
 )

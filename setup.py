@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='nppm',
-    version='0.1.1',
+    version='0.1.2',
     description='An npm-like tool for Python projects',
     url='https://github.com/emallson/nppm',
     author='J David Smith',

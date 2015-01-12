@@ -1,6 +1,6 @@
 {
     "name": "nppm",
-    "version": "v0.1.0",
+    "version": "v0.1.2",
     "main": "nppm/main.py",
     "engines": {
         "python": ">=3.0.0"
